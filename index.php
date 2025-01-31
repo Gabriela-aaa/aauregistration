@@ -12,121 +12,157 @@ session_start();
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
+    <header class="modern-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="assets/images/logo.jpg" alt="AAU Logo" class="logo">
+            </div>
+            
+            <nav class="modern-nav">
+                <div class="nav-group">
+                    <a href="#" class="nav-link active">
+                        <img src="assets/images/h2.png" alt="Home" class="nav-icon">
+                        <span>Home</span>
+                    </a>
+                    <a href="#academic" class="nav-link">
+                        <img src="assets/images/a2.png" alt="Academic" class="nav-icon">
+                        <span>Academic</span>
+                    </a>
+                    <a href="#research" class="nav-link">
+                        <img src="assets/images/a2.png" alt="Research" class="nav-icon">
+                        <span>Research</span>
+                    </a>
+                </div>
+
+                <div class="nav-group auth-group">
+                    <?php if(!isset($_SESSION['user_id'])): ?>
+                        <a href="login.php" class="nav-link">
+                            <img src="assets/images/a2.png" alt="Login" class="nav-icon">
+                            <span>Login</span>
+                        </a>
+                        <a href="register.php" class="btn-register">Register</a>
+                    <?php else: ?>
+                        <div class="profile-dropdown">
+                            <img src="assets/images/a2.png" alt="Profile" class="nav-icon">
+                            <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                            <div class="dropdown-content">
+                                <a href="profile.php">View Profile</a>
+                                <a href="settings.php">Settings</a>
+                                <a href="logout.php">Logout</a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </nav>
+
+            <button class="mobile-menu-btn">
+                <img src="assets/images/icons/menu.svg" alt="Menu">
+            </button>
+        </div>
+    </header>
 
     <main class="modern-layout">
-        <!-- Hero Section -->
-        <section class="hero-banner">
-            <div class="hero-content">
-                <h1 class="hero-title">Welcome to Computer Science at AAU</h1>
-                <p class="hero-subtitle">Shaping Tomorrow's Technology Leaders</p>
+        <aside class="side-nav">
+            <div class="side-nav-content">
+                <a href="#" class="side-link active">Overview</a>
+                <a href="#" class="side-link">Programs</a>
+                <a href="#" class="side-link">Faculty</a>
+                <a href="#" class="side-link">Research</a>
+                <a href="#" class="side-link">Resources</a>
+            </div>
+        </aside>
+
+        <section class="main-content">
+            <div class="hero-section">
+                <h1>Welcome to Computer Science at AAU</h1>
+                <p class="lead">Shaping the future through technology and innovation</p>
                 <?php if(!isset($_SESSION['user_id'])): ?>
-                    <div class="hero-buttons">
-                        <a href="register.php" class="btn-primary">Join Our Community</a>
-                        <a href="#explore" class="btn-secondary">Explore Programs</a>
+                    <div class="cta-buttons">
+                        <a href="register.php" class="btn-primary">Get Started</a>
+                        <a href="#learn-more" class="btn-secondary">Learn More</a>
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">30+</span>
-                    <span class="stat-label">Years of Excellence</span>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Comprehensive programs from undergraduate to doctoral studies</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Graduates</span>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research Innovation</h3>
+                    <p>Cutting-edge research in AI, cybersecurity, and more</p>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-label">Research Projects</span>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Vibrant community of learners and innovators</p>
                 </div>
+            </div>
+
+            <div class="content-sections">
+                <section id="academic" class="content-section">
+                    <h2>Academic Programs</h2>
+                    <p>Our department offers cutting-edge programs in computer science...</p>
+                </section>
+
+                <section id="research" class="content-section">
+                    <h2>Research Areas</h2>
+                    <p>Explore our diverse research initiatives and opportunities...</p>
+                </section>
             </div>
         </section>
 
-        <!-- Featured Programs -->
-        <section class="featured-programs" id="explore">
-            <h2 class="section-title">Our Programs</h2>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>BSc in Computer Science</h3>
-                    <p>Foundation in programming, algorithms, and software development</p>
-                    <a href="academic.php#undergraduate" class="card-link">Learn More →</a>
-                </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>MSc Program</h3>
-                    <p>Advanced studies in AI, cybersecurity, and software engineering</p>
-                    <a href="academic.php#graduate" class="card-link">Learn More →</a>
-                </div>
-                <div class="program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3>PhD Research</h3>
-                    <p>Cutting-edge research opportunities in computer science</p>
-                    <a href="academic.php#doctoral" class="card-link">Learn More →</a>
+        <aside class="quick-links">
+            <div class="quick-links-card">
+                <h3>Quick Access</h3>
+                <ul>
+                    <li><a href="#">Course Schedule</a></li>
+                    <li><a href="#">Student Resources</a></li>
+                    <li><a href="#">Faculty Directory</a></li>
+                    <li><a href="#">News & Events</a></li>
+                </ul>
+            </div>
+
+            <div class="social-card">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-        </section>
+        </aside>
+    </main>
 
-        <!-- Latest News -->
-        <section class="latest-news">
-            <h2 class="section-title">Latest Updates</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="assets/images/news1.jpg" alt="Research News">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-date">October 15, 2023</span>
-                        <h3>New AI Research Lab Opening</h3>
-                        <p>Expanding our research capabilities in artificial intelligence...</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="assets/images/news2.jpg" alt="Student Achievement">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-date">October 10, 2023</span>
-                        <h3>Students Win National Competition</h3>
-                        <p>Our students excel in national programming contest...</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Addis Ababa University<br>Computer Science Department<br>Email: cs@aau.edu.et</p>
             </div>
-        </section>
-
-        <!-- Research Highlights -->
-        <section class="research-highlights">
-            <h2 class="section-title">Research Highlights</h2>
-            <div class="research-showcase">
-                <div class="research-area">
-                    <div class="research-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Artificial Intelligence</h3>
-                    <p>Leading research in machine learning and neural networks</p>
-                </div>
-                <div class="research-area">
-                    <div class="research-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Advanced research in network security and cryptography</p>
-                </div>
-                <div class="research-area">
-                    <div class="research-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Big Data Analytics</h3>
-                    <p>Innovation in data processing and analytics</p>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
