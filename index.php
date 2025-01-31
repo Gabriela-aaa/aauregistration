@@ -21,15 +21,15 @@ session_start();
             <nav class="modern-nav">
                 <div class="nav-group">
                     <a href="#" class="nav-link active">
-                        <img src="assets/images/icons/home.svg" alt="Home" class="nav-icon">
+                        <img src="assets/images/h2.png" alt="Home" class="nav-icon">
                         <span>Home</span>
                     </a>
                     <a href="#academic" class="nav-link">
-                        <img src="assets/images/icons/academic.svg" alt="Academic" class="nav-icon">
+                        <img src="assets/images/a2.png" alt="Academic" class="nav-icon">
                         <span>Academic</span>
                     </a>
                     <a href="#research" class="nav-link">
-                        <img src="assets/images/icons/research.svg" alt="Research" class="nav-icon">
+                        <img src="assets/images/a2.png" alt="Research" class="nav-icon">
                         <span>Research</span>
                     </a>
                 </div>
@@ -37,13 +37,13 @@ session_start();
                 <div class="nav-group auth-group">
                     <?php if(!isset($_SESSION['user_id'])): ?>
                         <a href="login.php" class="nav-link">
-                            <img src="assets/images/icons/login.svg" alt="Login" class="nav-icon">
+                            <img src="assets/images/a2.png" alt="Login" class="nav-icon">
                             <span>Login</span>
                         </a>
                         <a href="register.php" class="btn-register">Register</a>
                     <?php else: ?>
                         <div class="profile-dropdown">
-                            <img src="assets/images/icons/profile.svg" alt="Profile" class="nav-icon">
+                            <img src="assets/images/a2.png" alt="Profile" class="nav-icon">
                             <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
                             <div class="dropdown-content">
                                 <a href="profile.php">View Profile</a>
