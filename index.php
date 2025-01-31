@@ -15,7 +15,7 @@ session_start();
     <header class="modern-header">
         <div class="header-container">
             <div class="logo-container">
-                <img src="assets/images/logo.png" alt="AAU Logo" class="logo">
+                <img src="assets/images/logo.jpg" alt="AAU Logo" class="logo">
             </div>
             
             <nav class="modern-nav">

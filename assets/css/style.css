@@ -1,10 +1,16 @@
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --background-color: #f8fafc;
-    --text-color: #1e293b;
-    --border-color: #e2e8f0;
+    --primary-color: #4F46E5;    /* Indigo */
+    --secondary-color: #7C3AED;  /* Purple */
+    --accent-color: #06B6D4;     /* Cyan */
+    --background-color: #F8FAFC;
+    --text-color: #1E293B;
+    --border-color: #E2E8F0;
     --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    
+    /* New color variables for images */
+    --icon-primary: #4F46E5;     /* For primary icons */
+    --icon-secondary: #7C3AED;   /* For secondary icons */
+    --icon-hover: #06B6D4;       /* For hover states */
 }
 
 body {
@@ -38,6 +44,12 @@ body {
 .logo {
     height: 40px;
     width: auto;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(225deg) brightness(104%) contrast(97%);
+    transition: filter 0.3s ease;
+}
+
+.logo:hover {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(1096%) hue-rotate(157deg) brightness(91%) contrast(101%);
 }
 
 /* Modern Navigation */
@@ -75,6 +87,12 @@ body {
 .nav-icon {
     width: 20px;
     height: 20px;
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(225deg) brightness(104%) contrast(97%);
+    transition: filter 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+    filter: invert(47%) sepia(82%) saturate(1096%) hue-rotate(157deg) brightness(91%) contrast(101%);
 }
 
 .btn-register {
@@ -138,8 +156,10 @@ body {
 .hero-section {
     text-align: center;
     padding: 3rem 0;
-    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
-                url('../images/hero-bg.jpg') center/cover;
+    background: linear-gradient(
+        rgba(79, 70, 229, 0.1), 
+        rgba(124, 58, 237, 0.1)
+    ), url('../images/hero-bg.jpg') center/cover;
     border-radius: 0.5rem;
     margin-bottom: 3rem;
 }
@@ -170,6 +190,15 @@ body {
     margin-bottom: 1rem;
 }
 
+.feature-icon i {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-icon i {
+    color: var(--accent-color);
+}
+
 /* Quick Links Sidebar */
 .quick-links {
     position: sticky;
@@ -182,6 +211,10 @@ body {
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
     margin-bottom: 1rem;
+}
+
+.quick-links-card a:hover {
+    color: var(--accent-color);
 }
 
 /* Modern Footer */
@@ -307,4 +340,13 @@ body {
 
 .auth-links a:hover {
     background-color: #004c99;
+}
+
+.social-icon {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
 } 
