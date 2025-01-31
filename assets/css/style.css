@@ -1,3 +1,243 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Modern Header */
+.modern-header {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Modern Navigation */
+.modern-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #f1f5f9;
+}
+
+.nav-link.active {
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-register {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Modern Layout */
+.modern-layout {
+    margin-top: 72px;
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 72px auto 0;
+    padding: 2rem;
+}
+
+/* Side Navigation */
+.side-nav {
+    position: sticky;
+    top: 90px;
+    height: calc(100vh - 90px);
+}
+
+.side-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.side-link:hover {
+    background-color: #f1f5f9;
+}
+
+.side-link.active {
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+}
+
+/* Main Content */
+.main-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.hero-section {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                url('../images/hero-bg.jpg') center/cover;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Quick Links Sidebar */
+.quick-links {
+    position: sticky;
+    top: 90px;
+}
+
+.quick-links-card, .social-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 1rem;
+}
+
+/* Modern Footer */
+.modern-footer {
+    background: white;
+    padding: 3rem 2rem 1rem;
+    margin-top: 4rem;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .modern-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side-nav, .quick-links {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-group {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-section, .feature-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
 .sidebar {
     min-height: calc(100vh - 56px);
     padding: 20px;
@@ -42,19 +282,6 @@
 
 .gap-2 {
     gap: 0.5rem;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('1.jpg');
-    opacity: 0.85;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    align-items: center;
-    color: black;
 }
 
 .welcome-message {
