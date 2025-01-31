@@ -42,4 +42,42 @@
 
 .gap-2 {
     gap: 0.5rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('1.jpg');
+    opacity: 0.85;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    color: black;
+}
+
+.welcome-message {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.auth-links {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-links a {
+    background-color: #06C;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.auth-links a:hover {
+    background-color: #004c99;
 } 
