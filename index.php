@@ -129,23 +129,12 @@ session_start();
                     <p>Innovation in data processing and analytics</p>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <?php echo date('Y'); ?> AAU Computer Science Department. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Start Your Journey?</h2>
-                <p>Join our community of innovators and technology leaders</p>
-                <div class="cta-buttons">
-                    <a href="register.php" class="btn-primary">Apply Now</a>
-                    <a href="contact.php" class="btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <?php include 'includes/footer.php'; ?>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 
