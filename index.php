@@ -37,7 +37,6 @@ session_start();
                 <div class="nav-group auth-group">
                     <?php if(!isset($_SESSION['user_id'])): ?>
                         <a href="login.php" class="nav-link">
-                            <img src="assets/images/a2.png" alt="Login" class="nav-icon">
                             <span>Login</span>
                         </a>
                         <a href="register.php" class="btn-register">Register</a>
@@ -54,28 +53,27 @@ session_start();
                     <?php endif; ?>
                 </div>
             </nav>
-
-            <button class="mobile-menu-btn">
-                <img src="assets/images/icons/menu.svg" alt="Menu">
-            </button>
         </div>
     </header>
 
     <main class="modern-layout">
         <aside class="side-nav">
             <div class="side-nav-content">
-                <a href="#" class="side-link active">Overview</a>
-                <a href="#" class="side-link">Programs</a>
-                <a href="#" class="side-link">Faculty</a>
-                <a href="#" class="side-link">Research</a>
-                <a href="#" class="side-link">Resources</a>
+                <a href="index.php" class="side-link active">Overview</a>
+                <a href="academic.php" class="side-link">Programs</a>
+                <a href="faculty.php" class="side-link">Faculty</a>
+                <a href="research.php" class="side-link">Research</a>
+                <a href="resources.php" class="side-link">Resources</a>
             </div>
         </aside>
 
         <section class="main-content">
             <div class="hero-section">
                 <h1>Welcome to Computer Science at AAU</h1>
-                <p class="lead">Shaping the future through technology and innovation</p>
+                <p>Computer Science Department has been 30 years since the Department of Computer Science (Addis Ababa University), our Department, launched the first BSc Program in Computer Science in the country. A dedication of teaching Computer Science, conducting research and providing services for 3 decade shall not be left unmarked. Besides that, we mark the 40th anniversary since the then-Diploma program in Computer Science has been launched and the 24th anniversary since we started the so far ongoing MSc program. The committed contribution of our staff in the last eighteen years is not forgotten.
+In this regard, we are going to publish "The Silver Book". The Silver book will be a high quality printed book that will contain the names, pictures and current career status of all graduates from the Department's B.Sc, M.Sc and Diploma programs during the last three decades or so. It also includes the details of the staff who served the Department during these years.</p>
+                <h2></h2>
+               
                 <?php if(!isset($_SESSION['user_id'])): ?>
                     <div class="cta-buttons">
                         <a href="register.php" class="btn-primary">Get Started</a>
