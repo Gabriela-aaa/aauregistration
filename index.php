@@ -73,13 +73,6 @@ session_start();
                 <p>Computer Science Department has been 30 years since the Department of Computer Science (Addis Ababa University), our Department, launched the first BSc Program in Computer Science in the country. A dedication of teaching Computer Science, conducting research and providing services for 3 decade shall not be left unmarked. Besides that, we mark the 40th anniversary since the then-Diploma program in Computer Science has been launched and the 24th anniversary since we started the so far ongoing MSc program. The committed contribution of our staff in the last eighteen years is not forgotten.
 In this regard, we are going to publish "The Silver Book". The Silver book will be a high quality printed book that will contain the names, pictures and current career status of all graduates from the Department's B.Sc, M.Sc and Diploma programs during the last three decades or so. It also includes the details of the staff who served the Department during these years.</p>
                 <h2></h2>
-               
-                <?php if(!isset($_SESSION['user_id'])): ?>
-                    <div class="cta-buttons">
-                        <a href="register.php" class="btn-primary">Get Started</a>
-                        <a href="#learn-more" class="btn-secondary">Learn More</a>
-                    </div>
-                <?php endif; ?>
             </div>
 
             <div class="features-grid">
